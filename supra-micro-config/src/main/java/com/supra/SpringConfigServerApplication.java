@@ -1,5 +1,5 @@
 package com.supra;
-
+//https://github.com/marcusdacoregio/oauth2-spring-boot/
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
