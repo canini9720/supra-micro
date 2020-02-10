@@ -8,6 +8,7 @@ spring:
     active: native #we are using native because the config server uses a git repo by default
   security:
     user:
+      name: admin	
       password: 1234 #the password which apps will use to access its configurations
 
 server:
