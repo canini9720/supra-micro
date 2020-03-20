@@ -3,7 +3,8 @@ spring:
     name: gateway-service
   cloud:
     config:
+      #enabled: true
       uri: http://localhost:8888
       fail-fast: true
       password: 1234
-      username: user
+      username: admin
