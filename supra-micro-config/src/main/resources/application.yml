@@ -2,10 +2,14 @@ spring:
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/shared #tells spring where to locate the config files
-  profiles:
-    active: native #we are using native because the config server uses a git repo by default
+        git:
+          uri: https://github.com/canini9720/supra-micro-config-store
+          search-paths: 
+          - '{application}'
+          #username: root  #if using private github
+          #passphase: pass
+  #profiles:
+  #  active: native #we are using native because the config server uses a git repo by default
   security:
     user:
       name: admin	
