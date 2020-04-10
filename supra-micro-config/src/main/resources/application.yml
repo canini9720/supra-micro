@@ -3,11 +3,12 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/canini9720/supra-micro-config-store
+          uri: https://github.com/canini9720/supra-micro-config-store  #file:///H:/supra-micro-config-store          
           search-paths: 
           - '{application}'
           #username: root  #if using private github
           #passphase: pass
+
   #profiles:
   #  active: native #we are using native because the config server uses a git repo by default
   security:
@@ -16,4 +17,4 @@ spring:
       password: 1234 #the password which apps will use to access its configurations
 
 server:
-  port: 8888 #the port where the config-server will be acessible
+  port: 8191 #the port where the config-server will be acessible
