@@ -1,4 +1,8 @@
 How to run Supra-micro
+Ports:
+config-service :8191
+userProfile-service:9191
+auth-service:8282
 1.Run config
 	supra-micro-config>mvn clean install
 	supra-micro-config>java -jar ./target/supra-micro-config-0.0.1-SNAPSHOT.jar
@@ -7,6 +11,7 @@ How to run Supra-micro
 		http://localhost:8191/registry-service/dev
 		http://localhost:8191/gateway-service/prod
 		http://localhost:8191/userprofile-service/prod
+		http://localhost:8191/auth-service/dev
 2.Run registry
 	supra-micro-registry>mvn clean install
 	supra-micro-registry>java -jar ./target/supra-micro-registry-0.0.1-SNAPSHOT.jar
