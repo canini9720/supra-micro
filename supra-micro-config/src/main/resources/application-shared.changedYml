@@ -1,10 +1,10 @@
-#Rename  'application-shared.changedYml' to application.yml, if you using shared config store
+#Rename  'application-shared.changedYml' to application.yml, if you using shared config store. As it git local not working(always override from remote git)
 spring:
   cloud:
     config:
       server:
         native:
-          search-locations: classpath:/shared #tells spring where to locate the config files
+          search-locations: classpath:/shared/{application} #tells spring where to locate the config files
   profiles:
     active: native #we are using native because the config server uses a git repo by default
   security:
