@@ -4,6 +4,18 @@ spring:
   cloud:
     config:
       uri: http://localhost:8191
-      fail-fast: true
-      password: 1234
-      username: user
+  security:
+     user:
+        name: hasan
+        password: hasan123
+        roles: ADMIN,USER
+security:         
+   oauth2:
+      client:
+        client-id: mobile
+        client-secret: mobile123
+        access-token-validity-seconds: 3600
+        authorized-grant-types: refresh_token,authorization_code,password,client_credentials
+        scope: READ,WRITE
+      authorization:
+          check-token-access: permitAll 
