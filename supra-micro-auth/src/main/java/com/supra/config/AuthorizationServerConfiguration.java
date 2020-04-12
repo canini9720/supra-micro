@@ -25,12 +25,7 @@ public class AuthorizationServerConfiguration implements AuthorizationServerConf
     @Autowired
     private AuthenticationManager authenticationManager;
 
-
-    /*@Bean
-    TokenStore jdbcTokenStore() {
-        return new JdbcTokenStore(dataSource);
-    }*/
-
+ 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security.checkTokenAccess("isAuthenticated()").tokenKeyAccess("permitAll()");
@@ -45,7 +40,18 @@ public class AuthorizationServerConfiguration implements AuthorizationServerConf
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        //endpoints.tokenStore(jdbcTokenStore());
+        endpoints.tokenStore(jdbcTokenStore());  // saving token into DB
         endpoints.authenticationManager(authenticationManager);
+    }
+    
+    /**
+     * This method is used store token into DB. Refering tables 
+     * OAUTH_ACCESS_TOKEN,
+     * OAUTH_REFRESH_TOKEN 
+     * @return
+     */
+    @Bean
+    TokenStore jdbcTokenStore() {
+        return new JdbcTokenStore(dataSource);
     }
 }
