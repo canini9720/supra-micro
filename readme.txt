@@ -27,3 +27,11 @@ auth-service:8282
 			http://localhost:9191/userProfile/getEmp
 			http://localhost:9191/userProfile/saveEmp
 			
+4.Run auth-service
+	supra-micro-auth>mvn clean install
+	supra-micro-auth>java -jar ./target\supra-micro-auth-0.0.1-SNAPSHOT.jar
+	RestAPI:
+			http://localhost:8282/oauth/token
+			http://localhost:8282/oauth/check_token?token=<access_token from above api>
+	
+			
