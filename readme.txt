@@ -1,8 +1,10 @@
 How to run Supra-micro
 Ports:
-config-service :8191
-userProfile-service:9191
-auth-service:8282
+config-service 		:8191
+userProfile-service	:9191
+auth-service		:8282
+supra-ui			:8080 (default Port)
+
 1.Run config
 	supra-micro-config>mvn clean install
 	supra-micro-config>java -jar ./target/supra-micro-config-0.0.1-SNAPSHOT.jar
@@ -34,4 +36,7 @@ auth-service:8282
 			http://localhost:8282/oauth/token
 			http://localhost:8282/oauth/check_token?token=<access_token from above api>
 	
-			
+5.Run supra-ui - This is used to test 'authorization-code' grant_type
+	Directly run from eclipse.			
+	From Browser:
+		http://localhost:8080/secure
