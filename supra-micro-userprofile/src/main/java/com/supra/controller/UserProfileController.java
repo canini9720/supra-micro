@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.supra.common.util.CommonConstants;
 import com.supra.common.util.CommonUtil;
 import com.supra.dto.EmployeeDTO;
+import com.supra.dto.EmployeeDetailsDTO;
 import com.supra.model.AuthUserEntity;
 import com.supra.model.EmployeeDetailEntity;
 import com.supra.model.NationalityEntity;
@@ -33,6 +34,13 @@ public class UserProfileController {
 		System.out.println("hi am calling====================");
 		return "hi am calling====================";
 	}
+	
+	@PreAuthorize("hasRole('ROLE_super')")
+	@RequestMapping(value="/getAllEmpDetails",method = RequestMethod.GET)
+	public List<EmployeeDetailsDTO> getAllEmpDetails()throws Exception {
+		return employeeService.getAllEmpDetails();
+	}
+		
 	
 	@PreAuthorize("hasAuthority('create_profile')")
 	@RequestMapping(value="/saveEmp",method = RequestMethod.POST)
