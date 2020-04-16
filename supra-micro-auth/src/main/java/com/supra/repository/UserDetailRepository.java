@@ -4,9 +4,9 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.supra.model.User;
+import com.supra.model.AuthUserEntity;
 
-public interface UserDetailRepository extends JpaRepository<User,Integer> {
+public interface UserDetailRepository extends JpaRepository<AuthUserEntity,Long> {
 
-	 Optional<User> findByUsername(String name);
+	 Optional<AuthUserEntity> findByUsername(String name);
 }

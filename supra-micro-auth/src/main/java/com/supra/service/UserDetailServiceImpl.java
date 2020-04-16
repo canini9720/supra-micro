@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.supra.model.AuthUserDetail;
-import com.supra.model.User;
+import com.supra.model.AuthUserEntity;
 import com.supra.repository.UserDetailRepository;
 
 
@@ -23,7 +23,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
 
-        Optional<User> optionalUser = userDetailRepository.findByUsername(name);
+        Optional<AuthUserEntity> optionalUser = userDetailRepository.findByUsername(name);
 
         optionalUser.orElseThrow(() -> new UsernameNotFoundException("Username or password wrong"));
 
