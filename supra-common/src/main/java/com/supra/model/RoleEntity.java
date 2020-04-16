@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "OAUTH_ROLE")
-public class Role implements Serializable {
+public class RoleEntity implements Serializable {
 
     
 	private static final long serialVersionUID = 1L;
@@ -25,7 +25,7 @@ public class Role implements Serializable {
     @JoinTable(name = "OAUTH_PERMISSION_ROLE", joinColumns = {
             @JoinColumn(name = "ROLE_ID", referencedColumnName = "id")}, inverseJoinColumns = {
             @JoinColumn(name = "PERMISSION_ID", referencedColumnName = "id")})
-    private List<Permission> permissions;
+    private List<PermissionEntity> permissions;
 
 	public Integer getId() {
 		return id;
@@ -43,11 +43,11 @@ public class Role implements Serializable {
 		this.name = name;
 	}
 
-	public List<Permission> getPermissions() {
+	public List<PermissionEntity> getPermissions() {
 		return permissions;
 	}
 
-	public void setPermissions(List<Permission> permissions) {
+	public void setPermissions(List<PermissionEntity> permissions) {
 		this.permissions = permissions;
 	}
     

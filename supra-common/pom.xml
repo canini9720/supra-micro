@@ -13,8 +13,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- Spring -->
-		<spring-framework.version>4.3.1.RELEASE</spring-framework.version>
-		<!-- AsperctJ -->
+		<spring-framework.version>5.2.5.RELEASE</spring-framework.version>
+	<!-- AsperctJ -->
 		<aspectj.version>1.7.4</aspectj.version>
 
 		<javax.mail.version>1.4.7</javax.mail.version>
@@ -24,6 +24,28 @@
   </properties>
 
   <dependencies>
+  
+  <!-- Spring -->
+
+		<dependency>
+    		<groupId>org.springframework.security</groupId>
+    		<artifactId>spring-security-crypto</artifactId>
+    		<version>5.3.1.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-web</artifactId>
+		    <version>${spring-framework.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context</artifactId>
+		    <version>${spring-framework.version}</version>
+		</dependency>
+		
+
   <!-- Hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -124,7 +146,28 @@
 			<artifactId>poi-excelant</artifactId>
 			<version>3.10-FINAL</version>
 		</dependency>
-		
-		
+		<!-- Lombok -->
+		<dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+        </dependency>
+		<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>1.2.17</version>
+	</dependency>
+	<!-- log4j -->
+	<dependency>
+	    <groupId>net.logstash.log4j</groupId>
+	    <artifactId>jsonevent-layout</artifactId>
+	    <version>1.7</version>
+	</dependency>
+	<dependency>
+	    <groupId>net.minidev</groupId>
+	    <artifactId>json-smart</artifactId>
+	    <version>2.1.0</version>
+	</dependency>
+
   </dependencies>
 </project>

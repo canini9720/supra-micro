@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "OAUTH_PERMISSION")
-public class Permission implements Serializable {
+public class PermissionEntity implements Serializable {
 	
     
 	private static final long serialVersionUID = 1L;

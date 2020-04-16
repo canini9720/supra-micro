@@ -7,15 +7,15 @@ import java.util.List;
 
 @Entity
 @Table(name = "OAUTH_USER")
-public class User implements Serializable {
+public class AuthUserEntity implements Serializable {
     
 	private static final long serialVersionUID = 1L;
 
 
-	public User() {
+	public AuthUserEntity() {
     }
 
-    public User(User user) {
+    public AuthUserEntity(AuthUserEntity user) {
         this.username = user.getUsername();
         this.password = user.getPassword();
         this.email = user.getEmail();
@@ -29,7 +29,7 @@ public class User implements Serializable {
     @Id
     @SequenceGenerator(name="LMN_EMP_SEQ", sequenceName="LMN_EMP_SEQ", allocationSize=1)
 	@GeneratedValue( strategy=GenerationType.SEQUENCE,generator="LMN_EMP_SEQ")
-    private Integer id;
+    private Long id;
 
     @Column(name = "username")
     private String username;
@@ -51,20 +51,24 @@ public class User implements Serializable {
     
     @Column(name = "accountNonLocked")
     private boolean accountNonLocked;
+    
+    
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private EmployeeDetailEntity empDetail;
 
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "OAUTH_ROLE_USER", joinColumns = {@JoinColumn(name = "USER_ID", referencedColumnName = "ID")},
             inverseJoinColumns = {
                     @JoinColumn(name = "ROLE_ID", referencedColumnName = "ID")})
-    private List<Role> roles;
+    private List<RoleEntity> roles;
 
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -124,12 +128,20 @@ public class User implements Serializable {
 		this.accountNonLocked = accountNonLocked;
 	}
 
-	public List<Role> getRoles() {
+	public List<RoleEntity> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(List<Role> roles) {
+	public void setRoles(List<RoleEntity> roles) {
 		this.roles = roles;
+	}
+
+	public EmployeeDetailEntity getEmpDetail() {
+		return empDetail;
+	}
+
+	public void setEmpDetail(EmployeeDetailEntity empDetail) {
+		this.empDetail = empDetail;
 	}
 
 
