@@ -3,8 +3,8 @@ package com.supra.respository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.supra.model.EmployeeEntity;
+import com.supra.model.AuthUserEntity;
 
-public interface EmployeeRespository extends JpaRepository<EmployeeEntity,Long>{
+public interface EmployeeRespository extends JpaRepository<AuthUserEntity,Long>{
 
 }
