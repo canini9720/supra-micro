@@ -8,12 +8,14 @@ spring:
     config:
       uri: http://localhost:8191 #where the config-service is running
       fail-fast: true #the service will not run if it can't reach the config-service
-      password: 1234 #password of the config-service
-      username: admin #username of the config-service
-
+      #password: 1234 #password of the config-service
+      #username: admin #username of the config-service
+server:
+  port: 8761
+  
 eureka:
-  instance:
-    prefer-ip-address: true #when the application registers with eureka, it uses its IP address rather than its hostname
+#  instance:
+#    prefer-ip-address: true #when the application registers with eureka, it uses its IP address rather than its hostname
   client:
-    registerWithEureka: false #tells the built-in eureka client to not register itself with eureka, because we should act as a server
-    fetchRegistry: false
+    register-with-eureka: false #tells the built-in eureka client to not register itself with eureka, because we should act as a server
+    fetch-registry: false

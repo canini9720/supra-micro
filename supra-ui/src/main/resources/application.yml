@@ -12,3 +12,4 @@ server:
     session:
       cookie:
         name: KSESSION
+  port: 9090        

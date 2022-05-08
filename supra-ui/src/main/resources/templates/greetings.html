@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+
+<title>Greetings!</title>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Hello <span th:text="${username}"></span></h1>
+
+			
+		</div>
+		 <div th:unless="${error==null}">
+	        <table class="table">
+	            <thead>
+	            <tr>
+	                <td>Status code</td>
+	                <td>Error</td>
+	            </tr>
+	            </thead>
+	
+	            <tr>
+	                <td><span th:text="${error.statusCode}"></span></td>
+	                <td><span th:text="${error.body}"></span></td>
+	            </tr>
+	        </table>
+    	</div>
+
+
+    
+	</div>
+</body>
+</html>

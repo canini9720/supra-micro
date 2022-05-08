@@ -1,4 +1,8 @@
 package com.supra.controller;
+import java.security.Principal;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.http.HttpEntity;
@@ -44,6 +48,15 @@ public class UIController extends WebSecurityConfigurerAdapter {
     @RequestMapping(value = "/secure")
     public String loadSecuredUI(){
         return "secure";
+    }
+    
+    @RequestMapping(value = "/greetings")
+    public String loadGreetings(Model model,Principal principal,HttpServletRequest request){
+    	System.out.println("usname="+principal.getName());
+    	Principal principal2 = request.getUserPrincipal();
+    	System.out.println("principal2="+principal2.getName());
+    	 model.addAttribute("username", principal.getName());
+        return "greetings";
     }
     
     @RequestMapping(value = "/getAllEmpDetails")
