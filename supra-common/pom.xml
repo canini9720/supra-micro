@@ -13,7 +13,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- Spring -->
-		<spring-framework.version>5.2.5.RELEASE</spring-framework.version>
+		<spring-framework.version>6.0.0</spring-framework.version>
 	<!-- AsperctJ -->
 		<aspectj.version>1.7.4</aspectj.version>
 
